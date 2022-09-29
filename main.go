@@ -222,8 +222,8 @@ func detail(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	Detail.StartDate = Detail.Start_date.Format("2 January 2006")
-	Detail.EndDate = Detail.End_date.Format("2 January 2006")
+	Detail.Format_Start_date  = Detail.Start_date.Format("2 January 2006")
+	Detail.Format_End_date  = Detail.End_date.Format("2 January 2006")
 
 	data := map[string]interface{}{
 		"Details": Detail,
@@ -308,8 +308,8 @@ func update(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(err.Error()))
 	}
 
-	Edit.StartDate = Edit.Start_date.Format("2 January 2006")
-	Edit.EndDate = Edit.End_date.Format("2 January 2006")
+	Edit.Format_Start_date  = Edit.Start_date.Format("2006-01-02")
+	Edit.Format_End_date  = Edit.End_date.Format("2006-01-02")
 
 	data := map[string]interface{}{
 		"Id":   id,
